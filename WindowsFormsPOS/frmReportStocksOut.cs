@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
-
-//using Microsoft.Reporting.WinForms;
+using Microsoft.Reporting.WinForms;
 
 namespace WindowsFormsPOS
 {
@@ -40,20 +38,20 @@ namespace WindowsFormsPOS
 
                 SQLConn.ConnDB();
                 SQLConn.cmd = new System.Data.SqlClient.SqlCommand(SQLConn.sqL, SQLConn.conn);
-                //SQLConn.da = new MySqlDataAdapter(SQLConn.cmd);
+                SQLConn.da = new System.Data.SqlClient.SqlDataAdapter(SQLConn.cmd);
 
-                //this.dsReportC.StocksOut.Clear();
-                //SQLConn.da.Fill(this.dsReportC.StocksOut);
+                this.dsReportC.StocksOut.Clear();
+                SQLConn.da.Fill(this.dsReportC.StocksOut);
 
-                //ReportParameter startDate = new ReportParameter("StartDate", StartDate.ToString());
-                //ReportParameter endDate = new ReportParameter("EndDate", EndDate.ToString());
-                //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { startDate, endDate });
+                ReportParameter startDate = new ReportParameter("StartDate", StartDate.ToString());
+                ReportParameter endDate = new ReportParameter("EndDate", EndDate.ToString());
+                this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { startDate, endDate });
 
-                //this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-                //this.reportViewer1.ZoomPercent = 90;
-                //this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
+                this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+                this.reportViewer1.ZoomPercent = 90;
+                this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
 
-                //this.reportViewer1.RefreshReport();
+                this.reportViewer1.RefreshReport();
 
             }
             catch (Exception ex)

@@ -69,7 +69,8 @@ namespace WindowsFormsPOS
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frmPOSForm lp = new frmPOSForm();
+            lp.ShowDialog();
         }
 
         private void picMinimize_Click(object sender, EventArgs e)

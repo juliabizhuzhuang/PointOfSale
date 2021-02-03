@@ -18,7 +18,7 @@ namespace WindowsFormsPOS
 
             try
             {
-                SQLConn.sqL = "SELECT SalesReturnId, ReturnDate, sr.InvoiceNo, CONCAT(lastname, ', ', firstname, ' ', MI) as StaffName, TotalAmount, SUM(sri.Quantity) as TotalQuantity FROM SalesReturn sr INNER JOIN SalesReturnItem sri ON sr.InvoiceNo = sri.InvoiceNo INNER JOIN Staff s ON s.StaffId = sr.userID WHERE ReturnDate  BETWEEN '" + startDate.ToString("yyyy-MM-dd") + "' AND '" + endDate.ToString("yyyy-MM-dd") + "' AND sr.InvoiceNo LIKE '%" + txtName.Text + "%' GROUP BY sr.InvoiceNo ORDER BY ReturnDate, sr.InvoiceNo DESC";
+                SQLConn.sqL = "SELECT SalesReturnId, ReturnDate, sr.InvoiceNo, CONCAT(lastname, ', ', firstname, ' ', MI) as StaffName, TotalAmount, SUM(sri.Quantity) as TotalQuantity FROM SalesReturn sr INNER JOIN SalesReturnItem sri ON sr.InvoiceNo = sri.InvoiceNo INNER JOIN Staff s ON s.StaffId = sr.userID WHERE ReturnDate  BETWEEN '" + startDate.ToString("yyyy-MM-dd") + "' AND '" + endDate.ToString("yyyy-MM-dd") + "' AND sr.InvoiceNo LIKE '%" + txtName.Text + "%' GROUP BY sr.InvoiceNo,sr.SalesReturnID,sr.ReturnDate,s.lastname,s.firstname,s.mi, TotalAmount ORDER BY ReturnDate, sr.InvoiceNo DESC";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new System.Data.SqlClient.SqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();

@@ -57,7 +57,7 @@ namespace WindowsFormsPOS
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GroupBox1.Size = new System.Drawing.Size(570, 215);
+            this.GroupBox1.Size = new System.Drawing.Size(578, 200);
             this.GroupBox1.TabIndex = 17;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Login Information";
@@ -143,7 +143,7 @@ namespace WindowsFormsPOS
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic);
-            this.btnCancel.Location = new System.Drawing.Point(285, 319);
+            this.btnCancel.Location = new System.Drawing.Point(327, 310);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(220, 68);
@@ -161,7 +161,7 @@ namespace WindowsFormsPOS
             this.btnOkay.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.btnOkay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic);
-            this.btnOkay.Location = new System.Drawing.Point(61, 319);
+            this.btnOkay.Location = new System.Drawing.Point(103, 310);
             this.btnOkay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOkay.Name = "btnOkay";
             this.btnOkay.Size = new System.Drawing.Size(214, 68);
@@ -175,12 +175,14 @@ namespace WindowsFormsPOS
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 392);
+            this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOkay);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
-            this.Text = "frmMain1";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

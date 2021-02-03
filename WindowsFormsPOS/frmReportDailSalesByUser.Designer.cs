@@ -43,7 +43,7 @@
             reportDataSource2.Name = "dsDRByUser";
             reportDataSource2.Value = this.DailySalesByStaffBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSMainForm.rptDailySalesReportByUser.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsPOS.rptDailySalesReportByUser.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(454, 342);

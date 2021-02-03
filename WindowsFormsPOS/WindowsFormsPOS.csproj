@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\julia.zhuang\OneDrive - Theta Systems Limited\Demo\PointOfSaleDemo\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5B2E2A003BD15712B5920E82B620EE2FCC44A249</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WindowsFormsPOS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -102,6 +130,12 @@
     </Compile>
     <Compile Include="frmAddEditCategory.Designer.cs">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEditPOSTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditPOSTrans.Designer.cs">
+      <DependentUpon>frmAddEditPOSTrans.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddEditProduct.cs">
       <SubType>Form</SubType>
@@ -187,6 +221,12 @@
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPOSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOSForm.Designer.cs">
+      <DependentUpon>frmPOSForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportDailSalesByUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,17 +245,17 @@
     <Compile Include="frmReportFilterStocks.Designer.cs">
       <DependentUpon>frmReportFilterStocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportStocksIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReportStocksIn.Designer.cs">
-      <DependentUpon>frmReportStocksIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEnterPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEnterPassword.Designer.cs">
       <DependentUpon>frmEnterPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportStocksIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportStocksIn.Designer.cs">
+      <DependentUpon>frmReportStocksIn.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportStocksOut.cs">
       <SubType>Form</SubType>
@@ -247,6 +287,9 @@
     <EmbeddedResource Include="AutoCompleteTextboxBarcode.resx" />
     <EmbeddedResource Include="frmAddEditCategory.resx">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditPOSTrans.resx">
+      <DependentUpon>frmAddEditPOSTrans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddEditProduct.resx">
       <DependentUpon>frmAddEditProduct.cs</DependentUpon>
@@ -293,11 +336,17 @@
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPOSForm.resx">
+      <DependentUpon>frmPOSForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportFilterDailySales.resx">
       <DependentUpon>frmReportFilterDailySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportFilterStocks.resx">
       <DependentUpon>frmReportFilterStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportStocksIn.resx">
+      <DependentUpon>frmReportStocksIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSameBarcodeItems.resx">
       <DependentUpon>frmSameBarcodeItems.cs</DependentUpon>
@@ -317,6 +366,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptDailySalesReportByInvoiceNo.rdlc" />
+    <EmbeddedResource Include="rptDailySalesReportByUser.rdlc" />
+    <EmbeddedResource Include="rptReturn.rdlc" />
+    <EmbeddedResource Include="rptStocksIn.rdlc" />
+    <EmbeddedResource Include="rptStocksOut.rdlc" />
     <None Include="dsReportC.xsc">
       <DependentUpon>dsReportC.xsd</DependentUpon>
     </None>
@@ -338,6 +392,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WindowsFormsPOS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -361,6 +416,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

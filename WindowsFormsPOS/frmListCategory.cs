@@ -64,6 +64,7 @@ namespace WindowsFormsPOS
             }
             try
             {
+                if (ListView1.FocusedItem != null)
                 if (string.IsNullOrEmpty(ListView1.FocusedItem.Text))
                 {
 

@@ -1,4 +1,5 @@
-﻿namespace WindowsFormsPOS
+﻿
+namespace WindowsFormsPOS
 {
     partial class frmReportStocksIn
     {
@@ -31,7 +32,7 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsReportC = new dsReportC();
+            this.dsReportC = new WindowsFormsPOS.dsReportC();
             this.StocksInBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsReportC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StocksInBindingSource)).BeginInit();

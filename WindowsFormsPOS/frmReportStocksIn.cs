@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+
 
 namespace WindowsFormsPOS
 {
@@ -13,7 +15,6 @@ namespace WindowsFormsPOS
             InitializeComponent();
             StartDate = startDate;
             EndDate = endDate;
-
         }
 
         private void frmReportStocksIn_Load(object sender, EventArgs e)
@@ -32,12 +33,11 @@ namespace WindowsFormsPOS
 
                 this.dsReportC.StocksIn.Clear();
                 SQLConn.da.Fill(this.dsReportC.StocksIn);
-
                 ReportParameter startDate = new ReportParameter("StartDate", StartDate.ToString());
                 ReportParameter endDate = new ReportParameter("EndDate", EndDate.ToString());
-                this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { startDate, endDate });
+                this.reportViewer1.LocalReport.SetParameters(new ReportParameter []{ startDate, endDate });
 
-                this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+                this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 this.reportViewer1.ZoomPercent = 90;
                 this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
 
@@ -46,7 +46,7 @@ namespace WindowsFormsPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Interaction.MsgBox(ex.ToString());
             }
         }
     }

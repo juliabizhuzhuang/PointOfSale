@@ -164,7 +164,7 @@
             this.label1.Location = new System.Drawing.Point(75, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(533, 86);
+            this.label1.Size = new System.Drawing.Size(518, 86);
             this.label1.TabIndex = 3;
             this.label1.Text = "Demo Point of Sale";
             // 
@@ -326,7 +326,7 @@
             this.panel1.BackColor = System.Drawing.Color.Maroon;
             this.panel1.Controls.Add(this.lblDateTime);
             this.panel1.Controls.Add(this.lbluser);
-            this.panel1.Location = new System.Drawing.Point(0, 574);
+            this.panel1.Location = new System.Drawing.Point(0, 569);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1062, 48);
@@ -340,7 +340,7 @@
             this.lblDateTime.Location = new System.Drawing.Point(694, 8);
             this.lblDateTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(358, 35);
+            this.lblDateTime.Size = new System.Drawing.Size(358, 30);
             this.lblDateTime.TabIndex = 8;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -352,7 +352,7 @@
             this.lbluser.Location = new System.Drawing.Point(3, 8);
             this.lbluser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(357, 35);
+            this.lbluser.Size = new System.Drawing.Size(357, 30);
             this.lbluser.TabIndex = 8;
             this.lbluser.Text = "Login user : ADMIN";
             this.lbluser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -550,13 +550,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hTransactionToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 11);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 13);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // hTransactionToolStripMenuItem
             // 
             this.hTransactionToolStripMenuItem.Name = "hTransactionToolStripMenuItem";
-            this.hTransactionToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.hTransactionToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.H)));
             this.hTransactionToolStripMenuItem.Size = new System.Drawing.Size(332, 34);
             this.hTransactionToolStripMenuItem.Text = "H Transaction";
@@ -584,7 +584,6 @@
             this.ClientSize = new System.Drawing.Size(1062, 768);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
