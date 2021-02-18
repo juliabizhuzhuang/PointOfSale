@@ -9,6 +9,7 @@ namespace WindowsFormsPOS
     {
         private frmAddEditProduct frmProduct = null;
         private frmAddProductQuick frmProductQuick = null;
+        private frmAddEditPOSTrans frmProductPOS = null;
         bool IsQuickAdd;
         public frmSelectCategory(Form callingForm, bool isQuickAdd)
         {
@@ -16,7 +17,10 @@ namespace WindowsFormsPOS
 
             if (isQuickAdd != true)
             {
+                if (callingForm is frmAddEditProduct)
                 frmProduct = callingForm as frmAddEditProduct;
+                else
+                { frmProductPOS = callingForm as frmAddEditPOSTrans; }
             }
             else
             {
@@ -82,8 +86,15 @@ namespace WindowsFormsPOS
 
             if (IsQuickAdd != true)
             {
-                this.frmProduct.CategoryID = id;
-                this.frmProduct.Category = ListView1.FocusedItem.SubItems[1].Text;
+                if (this.frmProduct != null)
+                {
+                    this.frmProduct.CategoryID = id;
+                    this.frmProduct.Category = ListView1.FocusedItem.SubItems[1].Text;
+                }
+                else
+                { this.frmProductPOS.CategoryID = id;
+                  this.frmProductPOS.Category = ListView1.FocusedItem.SubItems[1].Text;
+                }
             }
             else
             {

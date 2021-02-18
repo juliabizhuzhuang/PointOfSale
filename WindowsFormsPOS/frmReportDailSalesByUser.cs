@@ -19,6 +19,7 @@ namespace WindowsFormsPOS
         {
 
             LoadReport();
+            this.reportViewer1.RefreshReport();
         }
 
         private void LoadReport()
@@ -27,11 +28,11 @@ namespace WindowsFormsPOS
             {
                 if (InvoiceSetting() == 1)
                 {
-                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, REPLACE(TDate, '-', '/') as TDate, TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, Transactions as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' AND T.Status != 1 GROUP BY  St.StaffID, P.ProductNo, TDate ORDER By TDate";
+                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, REPLACE(TD.TDate, '-', '/') as TDate, TD.TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, TransactionDetails as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TD.TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' AND T.Status != 1 GROUP BY  St.StaffID,St.MI,St.firstname,St.lastname,P.ProductCode,P.Description, TD.TDate, TD.TTime, TD.ItemPrice ORDER By TD.TDate";
                 }
                 else
                 {
-                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, REPLACE(TDate, '-', '/') as TDate, TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, Transactions as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' GROUP BY  St.StaffID, P.ProductNo, TDate ORDER By TDate";
+                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, REPLACE(TD.TDate, '-', '/') as TDate, TD.TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, TransactionDetails as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TD.TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' GROUP BY  St.StaffID,St.firstname,St.MI,St.lastname, P.ProductCode,P.Description,TD.TTime, TD.TDate , TD.ItemPrice ORDER By TD.TDate";
                 }
 
                 SQLConn.ConnDB();

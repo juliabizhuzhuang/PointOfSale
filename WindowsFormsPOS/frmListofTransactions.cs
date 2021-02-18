@@ -18,7 +18,7 @@ namespace WindowsFormsPOS
 
             try
             {
-                SQLConn.sqL = "SELECT STR_TO_DATE(REPLACE(TDate, '-', '/'), '%m/%d/%Y') as TDate, InvoiceNo, CONCAT(lastname, ', ', firstname, ' ', MI) as StaffName FROM Transactions T INNER JOIN staff S ON T.StaffID = S.StaffID WHERE STR_TO_DATE(REPLACE(TDATE, '-', '/'), '%m/%d/%Y') BETWEEN '" + startDate.ToString("yyyy-MM-dd") + "' AND '" + endDate.ToString("yyyy-MM-dd") + "' AND InvoiceNo LIKE '%" + txtName.Text + "%' ORDER BY TDATE, InvoiceNo Desc";
+                SQLConn.sqL = "SELECT TDate  as TDate, InvoiceNo, CONCAT(lastname, ', ', firstname, ' ', MI) as StaffName FROM Transactions T INNER JOIN staff S ON T.StaffID = S.StaffID WHERE STR_TO_DATE(REPLACE(TDATE, '-', '/'), '%m/%d/%Y') BETWEEN '" + startDate.ToString("yyyy-MM-dd") + "' AND '" + endDate.ToString("yyyy-MM-dd") + "' AND InvoiceNo LIKE '%" + txtName.Text + "%' ORDER BY TDATE, InvoiceNo Desc";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new System.Data.SqlClient.SqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();

@@ -53,18 +53,20 @@
             this.panel2.BackColor = System.Drawing.Color.PowderBlue;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Location = new System.Drawing.Point(-2, -2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 54);
+            this.panel2.Size = new System.Drawing.Size(1002, 83);
             this.panel2.TabIndex = 11;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(68, 68);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -73,9 +75,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(49, 14);
+            this.lblTitle.Location = new System.Drawing.Point(74, 22);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(172, 25);
+            this.lblTitle.Size = new System.Drawing.Size(259, 40);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Add/Edit Category";
             // 
@@ -88,9 +91,11 @@
             this.GroupBox1.Controls.Add(this.Label3);
             this.GroupBox1.Controls.Add(this.Label6);
             this.GroupBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(9, 59);
+            this.GroupBox1.Location = new System.Drawing.Point(14, 91);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(647, 323);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox1.Size = new System.Drawing.Size(970, 497);
             this.GroupBox1.TabIndex = 12;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Category Information";
@@ -99,52 +104,58 @@
             // 
             this.lblCategoryNo.BackColor = System.Drawing.Color.White;
             this.lblCategoryNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCategoryNo.Location = new System.Drawing.Point(132, 43);
+            this.lblCategoryNo.Location = new System.Drawing.Point(198, 66);
+            this.lblCategoryNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoryNo.Name = "lblCategoryNo";
-            this.lblCategoryNo.Size = new System.Drawing.Size(156, 22);
+            this.lblCategoryNo.Size = new System.Drawing.Size(233, 33);
             this.lblCategoryNo.TabIndex = 2;
             this.lblCategoryNo.Text = " ";
             // 
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.White;
-            this.txtDescription.Location = new System.Drawing.Point(132, 97);
+            this.txtDescription.Location = new System.Drawing.Point(198, 149);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(441, 23);
+            this.txtDescription.Size = new System.Drawing.Size(660, 31);
             this.txtDescription.TabIndex = 1;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(16, 100);
+            this.Label2.Location = new System.Drawing.Point(24, 154);
+            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(92, 16);
+            this.Label2.Size = new System.Drawing.Size(141, 25);
             this.Label2.TabIndex = 4;
             this.Label2.Text = "Description :";
             // 
             // txtCatName
             // 
             this.txtCatName.BackColor = System.Drawing.Color.White;
-            this.txtCatName.Location = new System.Drawing.Point(132, 70);
+            this.txtCatName.Location = new System.Drawing.Point(198, 108);
+            this.txtCatName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCatName.Name = "txtCatName";
-            this.txtCatName.Size = new System.Drawing.Size(441, 23);
+            this.txtCatName.Size = new System.Drawing.Size(660, 31);
             this.txtCatName.TabIndex = 0;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(16, 73);
+            this.Label3.Location = new System.Drawing.Point(24, 112);
+            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(120, 16);
+            this.Label3.Size = new System.Drawing.Size(184, 25);
             this.Label3.TabIndex = 4;
             this.Label3.Text = "Category Name :";
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(16, 44);
+            this.Label6.Location = new System.Drawing.Point(24, 68);
+            this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(106, 16);
+            this.Label6.Size = new System.Drawing.Size(160, 25);
             this.Label6.TabIndex = 3;
             this.Label6.Text = "Category No. :";
             // 
@@ -152,9 +163,11 @@
             // 
             this.GroupBox2.Controls.Add(this.button4);
             this.GroupBox2.Controls.Add(this.button3);
-            this.GroupBox2.Location = new System.Drawing.Point(9, 388);
+            this.GroupBox2.Location = new System.Drawing.Point(14, 597);
+            this.GroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(647, 90);
+            this.GroupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox2.Size = new System.Drawing.Size(970, 138);
             this.GroupBox2.TabIndex = 13;
             this.GroupBox2.TabStop = false;
             // 
@@ -166,10 +179,11 @@
             this.button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Myriad Hebrew", 11.25F, System.Drawing.FontStyle.Italic);
-            this.button4.Location = new System.Drawing.Point(562, 16);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic);
+            this.button4.Location = new System.Drawing.Point(843, 25);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 63);
+            this.button4.Size = new System.Drawing.Size(112, 97);
             this.button4.TabIndex = 14;
             this.button4.Text = "&Cancel";
             this.button4.UseVisualStyleBackColor = false;
@@ -183,10 +197,11 @@
             this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Myriad Hebrew", 11.25F, System.Drawing.FontStyle.Italic);
-            this.button3.Location = new System.Drawing.Point(481, 16);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic);
+            this.button3.Location = new System.Drawing.Point(722, 25);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 63);
+            this.button3.Size = new System.Drawing.Size(112, 97);
             this.button3.TabIndex = 13;
             this.button3.Text = "&Save";
             this.button3.UseVisualStyleBackColor = false;
@@ -194,14 +209,15 @@
             // 
             // frmAddEditCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 490);
+            this.ClientSize = new System.Drawing.Size(999, 754);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddEditCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmAddEditCategory_Load);

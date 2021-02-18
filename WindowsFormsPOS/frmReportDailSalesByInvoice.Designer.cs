@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsPOS
 {
-    partial class frmReportStocksIn
+    partial class frmReportDailSalesByInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -30,48 +30,48 @@ namespace WindowsFormsPOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsReportC = new WindowsFormsPOS.dsReportC();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DailySalesByInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dsReportC)).BeginInit();
+            this.dsReportC = new WindowsFormsPOS.dsReportC();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DailySalesByInvoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportC)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsPOS.rptStocksIn.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(795, 615);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // dsReportC
-            // 
-            this.dsReportC.DataSetName = "dsReportC";
-            this.dsReportC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DailySalesByInvoiceBindingSource
             // 
             this.DailySalesByInvoiceBindingSource.DataMember = "DailySalesByInvoice";
             this.DailySalesByInvoiceBindingSource.DataSource = this.dsReportC;
             // 
-            // frmReportStocksIn
+            // dsReportC
+            // 
+            this.dsReportC.DataSetName = "dsReportC";
+            this.dsReportC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "dsDRByInvoice";
+            reportDataSource1.Value = this.DailySalesByInvoiceBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsPOS.rptStocksIn.rdlc";//"WindowsFormsPOS.rptDailySalesReportByInvoiceNo.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // frmReportDailSalesByInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 615);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmReportStocksIn";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stocks In Report";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmReportStocksIn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsReportC)).EndInit();
+            this.Name = "frmReportDailSalesByInvoice";
+            this.Text = "frmReportDailSalesByInvoice";
+            this.Load += new System.EventHandler(this.frmReportDailSalesByInvoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DailySalesByInvoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportC)).EndInit();
             this.ResumeLayout(false);
 
         }

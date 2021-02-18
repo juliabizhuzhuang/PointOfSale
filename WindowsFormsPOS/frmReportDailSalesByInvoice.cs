@@ -1,25 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
+
 namespace WindowsFormsPOS
 {
-    public partial class frmReportStocksOut : Form
+    public partial class frmReportDailSalesByInvoice : Form
     {
+        DateTime ReportDate;
         DateTime StartDate;
         DateTime EndDate;
-
-        public frmReportStocksOut(DateTime startDate, DateTime endDate)
+        public frmReportDailSalesByInvoice(DateTime reportdate)
         {
             InitializeComponent();
-
-            StartDate = startDate;
-            EndDate = endDate;
+            ReportDate = reportdate;
         }
 
-        private void frmReportStocksOut_Load(object sender, EventArgs e)
+        private void frmReportDailSalesByInvoice_Load(object sender, EventArgs e)
         {
-
             LoadReport();
             this.reportViewer1.RefreshReport();
         }
@@ -30,20 +35,19 @@ namespace WindowsFormsPOS
             {
                 if (InvoiceSetting() == 1)
                 {
-                    SQLConn.sqL = "SELECT ProductCode, P.Description, TDate as DateOut, SUM(TD.Quantity) as Quantity, TD.ItemPrice as Price, (SUM(TD.Quantity) * TD.ItemPrice) as TotalAmount FROM Product as P, Transactions as T, TransactionDetails as TD WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND STR_TO_DATE(REPLACE(TDate, '-', '/'), '%m/%d/%Y') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "' AND T.Status != 1 GROUP BY P.ProductNo, TDate ORDER By TDate, Description";
+                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, TD.TDate as TDate, TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, TransactionDetails as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TD.TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' AND T.Status != 1 GROUP BY  St.StaffID,  St.firstname,St.lastname, ST.MI,P.ProductCode,P.Description, TD.TDate, TD.ItemPrice  ORDER By TD.TDate";
                 }
                 else
                 {
-                    SQLConn.sqL = "SELECT ProductCode, P.Description,TDate as DateOut, SUM(TD.Quantity) as Quantity, TD.ItemPrice as Price, (SUM(TD.Quantity) * TD.ItemPrice) as TotalAmount FROM Product as P, Transactions as T, TransactionDetails as TD WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND STR_TO_DATE(REPLACE(TDate, '-', '/'), '%m/%d/%Y') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "' GROUP BY P.ProductNo, TDate ORDER By TDate, Description";
+                    SQLConn.sqL = "SELECT CONCAT(Lastname, ', ', Firstname, ' ', MI) as StaffName, ProductCode, P.Description, TD.TDate as TDate, TTime,TD.ItemPrice, SUM(TD.Quantity) as totalQuantity, (TD.ItemPrice * SUM(TD.Quantity)) as TotalPrice  FROM Product as P, TransactionDetails as T, TransactionDetails as TD, Staff as St WHERE P.ProductNo = TD.ProductNo AND TD.InvoiceNo = T.InvoiceNo AND St.StaffID = T.StaffID AND  TDate = '" + ReportDate.ToString("MM/dd/yyyy") + "' GROUP BY  St.StaffID,  St.firstname,St.lastname, ST.MI,P.ProductCode,P.Description, TD.TDate , TD.ItemPrice ORDER By TD.TDate";
                 }
 
                 SQLConn.ConnDB();
                 SQLConn.cmd = new System.Data.SqlClient.SqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.da = new System.Data.SqlClient.SqlDataAdapter(SQLConn.cmd);
-
-               // this.dsReportC.StocksOut.Clear();
-              //  SQLConn.da.Fill(this.dsReportC.StocksOut);
-
+                this.dsReportC.DailySalesByInvoice.Clear();
+                SQLConn.da.Fill(this.dsReportC.DailySalesByInvoice);
+                
                 ReportParameter startDate = new ReportParameter("StartDate", StartDate.ToString());
                 ReportParameter endDate = new ReportParameter("EndDate", EndDate.ToString());
                 this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { startDate, endDate });
@@ -91,3 +95,4 @@ namespace WindowsFormsPOS
         }
     }
 }
+
